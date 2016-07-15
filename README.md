@@ -16,6 +16,8 @@ reference : https://github.com/nzakas/understandinges6
 다시 진행합니다.
 뭐 거의 1년만에 다시 시작하네요..
 번역했던 부분들을 다시 점검하면서 이번에는 번역밑에 원문도 같이 적어둘 예정입니다.
+참고로 공부용이기에... 말투부터 중간중간에 혼잣말?이 좀 많습니다.
+불편하시면 그 부분은 위의 원문을 읽으시면 좋겠네요. 호홓
 
 끝으로 자카스횽! 감사드립니다.(어차피 우린 얼굴도 못 본 사...크흡 ㅠㅠ)
 
@@ -48,7 +50,7 @@ If you think of next follow say, please mail to me.
 1. ㅋ
 
 
-# Progress
+# Progress & History
 
 1. 2015.12.14 chapter 1. block-binding 완료.
 1. 2015.12.19 chapter 2. String and Regular Expressions 일부 완료.
