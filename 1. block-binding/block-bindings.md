@@ -1,10 +1,3 @@
-# 주의!!!(warrnig)
-
-원문이 변경됨에 따라...
-현재 이 파일은 원문과 다를 수 있습니다.
-앞에서부터 차례대로 번역을 다시 진행하고 있으니
-참고 부탁드립니다.
-
 
 # Block Bindings
 
@@ -31,7 +24,7 @@ Variable declarations using `var` are treated as if they are at the top of the f
 (or global scope, if declared outside of a function) regardless of where the actual declaration occurs; this is called *hoisting*.
 For a demonstration of what hoisting does, consider the following function definition:
 
-'var'를 사용하는 변수 선언법들은 실제 선언문이 존재했던 위치에 상관없이 함수의 최상단(함수 밖이라면 global scope)으로 취급해.
+`var`를 사용하는 변수 선언법들은 실제 선언문이 존재했던 위치에 상관없이 함수의 최상단(함수 밖이라면 global scope)으로 취급해.
 우리는 이것을 *호이스팅(hoisting)*이라 부르지.
 무엇이 호이스팅인지 증명하기 위해, 아래의 함수 선언을 생각해보자.
 
@@ -103,6 +96,89 @@ For this reason, ECMAScript 6 introduces block level scoping options to make the
 
 
 ## Block-Level Declarations
+
+Block-level declarations are those that declare variables that are inaccessible outside of a given block scope.
+Block scopes, also called lexical scopes, are created:
+
+1. Inside of a function
+1. Inside of a block (indicated by the `{` and `}` characters)
+
+Block scoping is how many C-based languages work,
+and the introduction of block-level declarations in ECMAScript 6 is intended to bring that same flexibility (and uniformity) to JavaScript.
+
+Block-level(이하 BL - Boys Lov...아닙니다!) 선언들은 변수들을 선언한 block scope 밖에서는 접근할 수 없어.
+다음의 조건들을 만족하면 Block scope들 또한 렉시컬 스코프라고 말할 수 있지.
+
+1. 함수 내부
+2. block 내부(중괄호(`{}` 내부))
+
+Block scoping은 C를 기반으로 하는 많은 언어들의 작동 방식이고,
+ES6에서 BL 선언들의 도입은 JS에 동일한 유연성(또는 균일함)을 가져올 수 있도록 만들어졌어.
+
+
+### Let Declarations
+
+The `let` declaration syntax is the same as the syntax for `var`.
+You can basically replace `var` with `let` to declare a variable,
+but limit the variable's scope to only the current code block (there are a few other subtle differences discussed a bit later, as well).
+Since `let` declarations are not hoisted to the top of the enclosing block,
+you may want to always place `let` declarations first in the block, so that they are available to the entire block. Here's an example:
+
+`let` 선언문의 문법은 `var`의 문법과 같아. 기본적으로 `var`로 선언하는 것을 `let`으로 교체할 수도 있지만,
+변수들의 스코프가 오직 현재의 코드 블락(여기에는 약간의 다른 미묘한 차이점이 존재하지만 잠시 후에 다루도록 하자)이라는 제한이 있어.
+`let` 선언문들을 사용한 후에는 블락으로 둘러싸인 영역의 최상단으로 호이스팅되지 않고,
+네가 원했던 그 위치에 항상 `let` 선언문들을 블락 상단에 작성하면, 블락 전체에서 사용할 수 있어.
+다음은 그 예제야.
+
+```js
+function getValue(condition) {
+
+    if (condition) {
+        let value = "blue";
+
+        // other code
+
+        return value;
+    } else {
+
+        // value doesn't exist here
+
+        return null;
+    }
+
+    // value doesn't exist here
+}
+```
+
+This version of the `getValue` function behaves much closer to how you'd expect it to in other C-based languages.
+Since the variable `value` is declared using `let` instead of `var`,
+the declaration isn't hoisted to the top of the function definition,
+and the variable `value` is no longer accessible once execution flows out of the `if` block.
+If `condition` evaluates to false, then `value` is never declared or initialized.
+
+`getValue` 함수의 형태는 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
