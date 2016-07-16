@@ -13,8 +13,10 @@ C를 기반으로 만들어진 대부분의 언어들에서, 변수들(또는 �
 하지만 JS에서는 그렇지 않아. 변수들이 실제로 생성되는 건 선언된 방법에 의존하기에
 ECMAScript 6(이하 ES6)는 스코프를 컨트롤하기 쉽게 옵션을 제공하고 있어.
 이 주제에서는
+
 1. 'var' 선언법들이 왜 혼란스러울 수 있는지
 2. ES6의 block-level 바인딩
+
 위의 내용들 그리고 이들을 사용할 때 필요할 중요한 예시를 다룰거야.
 
 
@@ -53,9 +55,9 @@ then you might expect the variable value to only be created if condition evaluat
 In fact, the variable value is created regardless.
 Behind the scenes, the JavaScript engine changes the getValue function to look like this:
 
-네가 JS에 익숙하지 않다면, 이 코드에서 'condition'이 true로 평가될 때만 변수 'value'가 생성될 것으로 예상할 수도 있을 거야.
-사실 변수 'value'는 위 조건에 상관없이 생성돼.
-보이지 않는 곳에서, JS 엔진은 위의 'getValue' 함수를 아래의 예제처럼 변경해.
+네가 JS에 익숙하지 않다면, 이 코드에서 `condition`이 true로 평가될 때만 변수 `value`가 생성될 것으로 예상할 수도 있을 거야.
+사실 변수 `value`는 위 조건에 상관없이 생성돼.
+보이지 않는 곳에서, JS 엔진은 위의 `getValue` 함수를 아래의 예제처럼 변경해.
 
 ```js
 function getValue(condition) {
@@ -79,9 +81,9 @@ The declaration of value is hoisted to the top, while the initialization remains
 That means the variable value is actually still accessible from within the else clause.
 If accessed from there, the variable would just have a value of undefined because it hasn't been initialized.
 
-'value'의 선언이 초기화를 위해 같은 곳에 위치할 수 있도록 위로 끌어올려졌어(hoisted).
-그 의미는 변수 'value'를 'else' 절 내부에서 실제로 계속 접근할 수 있도록 하기 위해서야.
-'else' 절 내부에서 접근한다면, 그 변수는 이미 초기화가 됐기 때문에, 'undefined' 값을 얻을 수 있어.
+`value`의 선언이 초기화를 위해 같은 곳에 위치할 수 있도록 위로 끌어올려졌어(hoisted).
+그 의미는 변수 `value`를 `else` 절 내부에서 실제로 계속 접근할 수 있도록 하기 위해서야.
+`else` 절 내부에서 접근한다면, 그 변수는 이미 초기화가 됐기 때문에, `undefined` 값을 얻을 수 있어.
 
 * 역자 주 : 끌어올림을 더 쉽게 이해하는 방법으로 여러 개의 변수가 함수 내부 어딘가에 각각 따로 선언되어 있다고 생각해보세요.
 변수가 100개쯤 있으면 이해하기 어렵습니다. 만류귀종이라고.. 컴퓨터도 똑같다고 생각하면 편합니다.
@@ -156,7 +158,7 @@ the declaration isn't hoisted to the top of the function definition,
 and the variable `value` is no longer accessible once execution flows out of the `if` block.
 If `condition` evaluates to false, then `value` is never declared or initialized.
 
-`getValue` 함수의 형태는 
+`getValue` 함수의 형태는
 
 
 
